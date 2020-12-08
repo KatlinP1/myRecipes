@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+  </head>
+  <body>
+    <div id='recipes'>
+
+    <% for(var i=0; i<recipes.length; i++) {%>
+
+        <h2><%= recipes[i].title %></h2> <br>
+        <img src="<%= recipes[i].image %>">
+        
+        <h3>Ingredients (<%= recipes[i].extendedIngredients.length %>) </h3>
+
+        <% for(var j=0; j<recipes[i].extendedIngredients.length; j++) {%>
+            <%= j %>.
+            <%= recipes[i].extendedIngredients[j].name %> 
+            <%= recipes[i].extendedIngredients[j].amount %> 
+            <%= recipes[i].extendedIngredients[j].unit %> <br>
+            
+        <% } %>
+
+        <h3>Instructions</h3>
+        <%- recipes[i].instructions %>
+        
+       
+
+
+
+
+    <% } %>
+
+    </div>
+  </body>
+</html>
